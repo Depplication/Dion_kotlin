@@ -1,9 +1,279 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".JoinActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:id="@+id/Arrow_Id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/arrow_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="아이디"
+                android:textColor="@color/TextGray"
+                app:layout_constraintBottom_toBottomOf="@id/Arrow_Id"
+                app:layout_constraintStart_toEndOf="@id/Arrow_Id"
+                app:layout_constraintTop_toTopOf="@id/Arrow_Id" />
+
+            <EditText
+                android:id="@+id/Id_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_gray"
+                android:hint="아이디를 입력하세요."
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:singleLine="true"
+                android:textColorHint="@color/TextHint"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/Arrow_Id" />
+
+            <ImageView
+                android:id="@+id/Arrow_Pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/arrow_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Id_ET" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="비밀번호"
+                android:textColor="@color/TextGray"
+                app:layout_constraintBottom_toBottomOf="@id/Arrow_Pw"
+                app:layout_constraintStart_toEndOf="@id/Arrow_Pw"
+                app:layout_constraintTop_toTopOf="@id/Arrow_Pw" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Linear_Pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintTop_toBottomOf="@id/Arrow_Pw">
+
+                <EditText
+                    android:id="@+id/Pw_ET"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_gray"
+                    app:layout_constraintEnd_toStartOf="@id/Pw_Toggle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:hint="비밀번호를 입력하세요."
+                    android:paddingStart="15dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/TextHint"
+                    android:textSize="13sp"/>
+
+                <ImageView
+                    android:tag="0"
+                    android:id="@+id/Pw_Toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@drawable/ic_baseline_visibility_off_24"
+                    android:background="@drawable/round_gray"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/Arrow_RPw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/arrow_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Linear_Pw" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="비밀번호 확인"
+                android:textColor="@color/TextGray"
+                app:layout_constraintBottom_toBottomOf="@id/Arrow_RPw"
+                app:layout_constraintStart_toEndOf="@id/Arrow_RPw"
+                app:layout_constraintTop_toTopOf="@id/Arrow_RPw" />
+
+            <EditText
+                android:id="@+id/RPw_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_gray"
+                android:hint="비밀번호를 다시 입력하세요."
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:singleLine="true"
+                android:textColorHint="@color/TextHint"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/Arrow_RPw" />
+
+            <ImageView
+                android:id="@+id/Arrow_PhoneNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/arrow_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/RPw_ET" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="전화번호"
+                android:textColor="@color/TextGray"
+                app:layout_constraintBottom_toBottomOf="@id/Arrow_PhoneNum"
+                app:layout_constraintStart_toEndOf="@id/Arrow_PhoneNum"
+                app:layout_constraintTop_toTopOf="@id/Arrow_PhoneNum" />
+
+            <EditText
+                android:id="@+id/PhoneNum_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_gray"
+                android:hint="전화번호를 입력하세요."
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:singleLine="true"
+                android:textColorHint="@color/TextHint"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/Arrow_PhoneNum" />
+
+            <ImageView
+                android:id="@+id/Arrow_Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/arrow_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/PhoneNum_ET" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="주소"
+                android:textColor="@color/TextGray"
+                app:layout_constraintBottom_toBottomOf="@id/Arrow_Address"
+                app:layout_constraintStart_toEndOf="@id/Arrow_Address"
+                app:layout_constraintTop_toTopOf="@id/Arrow_Address" />
+
+            <EditText
+                android:id="@+id/Address_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_gray"
+                android:hint="주소를 입력하세요.(정확히 기재해주세요.)"
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:singleLine="true"
+                android:textColorHint="@color/TextHint"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/Arrow_Address" />
+
+            <ImageView
+                android:id="@+id/Arrow_Account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/arrow_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Address_ET" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="계좌번호"
+                android:textColor="@color/TextGray"
+                app:layout_constraintBottom_toBottomOf="@id/Arrow_Account"
+                app:layout_constraintStart_toEndOf="@id/Arrow_Account"
+                app:layout_constraintTop_toTopOf="@id/Arrow_Account" />
+
+            <EditText
+                android:id="@+id/Account_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_gray"
+                android:hint="계좌번호를 입력하세요.(정확히 기재해주세요.)"
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:singleLine="true"
+                android:textColorHint="@color/TextHint"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/Arrow_Account" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Join_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_blue"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="가입하기"
+                android:textColor="@color/TextPurple"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/Account_ET" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>
