@@ -77,16 +77,6 @@
                 app:layout_constraintStart_toStartOf="@id/Aboutme_Title"
                 app:layout_constraintTop_toBottomOf="@id/Aboutme_Title" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/write_icon"
-                app:layout_constraintBottom_toBottomOf="@id/Name_Tv"
-                app:layout_constraintStart_toEndOf="@id/Name_Tv"
-                app:layout_constraintTop_toTopOf="@id/Name_Tv" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Mypoint_Layout"
                 android:layout_width="match_parent"

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/round_gray"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:paddingEnd="20dp">
+
+    <ImageView
+        android:id="@+id/Promotion_Img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/Promotion_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회사이름"
+        app:layout_constraintStart_toEndOf="@id/Promotion_Img"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/Promotion_Img"/>
+
+    <TextView
+        android:id="@+id/Promotion_proTitle"
+        app:layout_constraintTop_toBottomOf="@id/Promotion_Title"
+        app:layout_constraintStart_toEndOf="@id/Promotion_Img"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="간단한 가게 소개"/>
+
+    <TextView
+        android:id="@+id/Promotion_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가나다라ㅏ마ㅏ나ㅏㅁ럼ㄴ엄ㄴ라ㅗㅁㄴ어ㅏㅁ노ㅓㅏ롬너ㅏ오머나로ㅓㅏㅁㄴ오ㅓㅏㅁㄴ로"
+        app:layout_constraintTop_toBottomOf="@id/Promotion_proTitle"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@id/Promotion_Img"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

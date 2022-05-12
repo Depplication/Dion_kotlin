@@ -15,4 +15,5 @@
     <color name="RoundGray">#D1D2DB</color>
     <color name="RoundBlue">#627FE4</color>
     <color name="RoundBlack">#757580</color>
+    <color name="RoundSearch">#64668C</color>
 </resources>
