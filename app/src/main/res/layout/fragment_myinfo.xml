@@ -44,12 +44,22 @@
                 app:layout_constraintStart_toStartOf="@id/MyTitle"
                 app:layout_constraintTop_toBottomOf="@id/MyTitle" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/write_icon"
+                app:layout_constraintStart_toEndOf="@id/Name_Tv"
+                app:layout_constraintTop_toTopOf="@id/Name_Tv"
+                app:layout_constraintBottom_toBottomOf="@id/Name_Tv"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="5dp" />
+
             <TextView
                 android:id="@+id/Name_Tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
-                android:text="길동이"
+                android:text="김언수"
                 android:textColor="@color/TextGray"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@id/Profile_Img"
@@ -71,7 +81,7 @@
                 android:id="@+id/Aboutme_Tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="응애 나 애기 길동이ㅎㅎ"
+                android:text="응애 언수야 디자인 해줘"
                 android:textColor="@color/TextGray"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@id/Aboutme_Title"

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dion_kotlin">
         <activity
+            android:name=".PointLogActivity"
+            android:exported="false" />
+        <activity
             android:name=".JoinActivity"
             android:exported="false" />
         <activity
