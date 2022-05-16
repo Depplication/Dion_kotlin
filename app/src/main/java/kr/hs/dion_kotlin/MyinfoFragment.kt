@@ -1,6 +1,7 @@
 package kr.hs.dion_kotlin
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,6 +32,13 @@ class MyinfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val Arrow_Changepoint : ImageView = view.findViewById(R.id.Arrow_Changepoint)
+
+        val Arrow_Mypoint : ImageView = view.findViewById(R.id.Arrow_Mypoint)
+
+        Arrow_Mypoint.setOnClickListener {
+            val intent = Intent(context, PointLogActivity::class.java)
+            startActivity(intent)
+        }
 
         Arrow_Changepoint.setOnClickListener {
 
