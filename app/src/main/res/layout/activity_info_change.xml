@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".InfoChangeActivity">
+
+    <ImageView
+        android:id="@+id/Back_Arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Change_Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="정보 변경"
+        android:textColor="@color/TextGray"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/Back_Arrow"
+        app:layout_constraintStart_toEndOf="@id/Back_Arrow"
+        app:layout_constraintTop_toTopOf="@id/Back_Arrow" />
+
+
+    <ImageView
+        android:id="@+id/Arrow_OriginPhoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/arrow_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Change_Info" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="기존 전화번호"
+        android:textColor="@color/TextGray"
+        app:layout_constraintBottom_toBottomOf="@id/Arrow_OriginPhoneNum"
+        app:layout_constraintStart_toEndOf="@id/Arrow_OriginPhoneNum"
+        app:layout_constraintTop_toTopOf="@id/Arrow_OriginPhoneNum" />
+
+    <EditText
+        android:id="@+id/OriginPhoneNum_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_gray"
+        android:hint="기존에 쓰던 전화번호를 입력하세요."
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:singleLine="true"
+        android:textColorHint="@color/TextHint"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/Arrow_OriginPhoneNum" />
+
+    <ImageView
+        android:id="@+id/Arrow_NewPhoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/arrow_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/OriginPhoneNum_ET" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="새로운 전화번호"
+        android:textColor="@color/TextGray"
+        app:layout_constraintBottom_toBottomOf="@id/Arrow_NewPhoneNum"
+        app:layout_constraintStart_toEndOf="@id/Arrow_NewPhoneNum"
+        app:layout_constraintTop_toTopOf="@id/Arrow_NewPhoneNum" />
+
+    <EditText
+        android:id="@+id/NewPhoneNum_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_gray"
+        android:hint="새로운 전화번호를 입력하세요."
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:singleLine="true"
+        android:textColorHint="@color/TextHint"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/Arrow_NewPhoneNum" />
+
+    <ImageView
+        android:id="@+id/Arrow_Account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/arrow_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/NewPhoneNum_ET" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="계좌번호"
+        android:textColor="@color/TextGray"
+        app:layout_constraintBottom_toBottomOf="@id/Arrow_Account"
+        app:layout_constraintStart_toEndOf="@id/Arrow_Account"
+        app:layout_constraintTop_toTopOf="@id/Arrow_Account" />
+
+    <EditText
+        android:id="@+id/Account_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_gray"
+        android:hint="계좌번호를 입력하세요."
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:singleLine="true"
+        android:textColorHint="@color/TextHint"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/Arrow_Account" />
+
+    <ImageView
+        android:id="@+id/Arrow_Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/arrow_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Account_ET" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="주소"
+        android:textColor="@color/TextGray"
+        app:layout_constraintBottom_toBottomOf="@id/Arrow_Address"
+        app:layout_constraintStart_toEndOf="@id/Arrow_Address"
+        app:layout_constraintTop_toTopOf="@id/Arrow_Address" />
+
+    <EditText
+        android:id="@+id/Address_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/round_gray"
+        android:hint="주소를 입력하세요."
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:singleLine="true"
+        android:textColorHint="@color/TextHint"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/Arrow_Address" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Save_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_blue"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:text="저장하기"
+        android:textColor="@color/TextPurple"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

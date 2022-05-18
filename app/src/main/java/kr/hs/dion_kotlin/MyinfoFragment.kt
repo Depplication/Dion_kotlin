@@ -31,16 +31,23 @@ class MyinfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val Arrow_Changepoint : ImageView = view.findViewById(R.id.Arrow_Changepoint)
+        val ArrowChangepoint : ImageView = view.findViewById(R.id.Arrow_Changepoint)
 
-        val Arrow_Mypoint : ImageView = view.findViewById(R.id.Arrow_Mypoint)
+        val ArrowMypoint : ImageView = view.findViewById(R.id.Arrow_Mypoint)
 
-        Arrow_Mypoint.setOnClickListener {
+        val InfoSettings : ImageView = view.findViewById(R.id.Info_Settings)
+
+        InfoSettings.setOnClickListener {
+            val intent = Intent(context, InfoChangeActivity::class.java)
+            startActivity(intent)
+        }
+
+        ArrowMypoint.setOnClickListener {
             val intent = Intent(context, PointLogActivity::class.java)
             startActivity(intent)
         }
 
-        Arrow_Changepoint.setOnClickListener {
+        ArrowChangepoint.setOnClickListener {
 
             // Dialog만들기
             val mDialogView = LayoutInflater.from(context).inflate(R.layout.pointchange_log, null)
