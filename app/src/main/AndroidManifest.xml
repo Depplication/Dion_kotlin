@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dion_kotlin">
         <activity
+            android:name=".PromotionDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".InfoChangeActivity"
             android:exported="false" />
         <activity

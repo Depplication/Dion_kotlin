@@ -1,6 +1,7 @@
 package kr.hs.dion_kotlin
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Rect
 import android.view.LayoutInflater
 import android.view.View
@@ -37,6 +38,11 @@ class PromotionAdapter(private val context: Context) : RecyclerView.Adapter<Prom
             Glide.with(itemView).load(item.Img).into(Img)
             Title.text = item.Title
             Introduction.text = item.Introduction
+
+            itemView.setOnClickListener {
+                val intent = Intent(context, PromotionDetailsActivity::class.java)
+                context.startActivity(intent)
+            }
 
         }
     }
