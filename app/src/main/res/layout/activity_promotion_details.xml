@@ -6,72 +6,141 @@
     android:layout_height="match_parent"
     tools:context=".PromotionDetailsActivity">
 
-    <ImageView
-        android:id="@+id/Back_Arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/ic_baseline_arrow_back_ios_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Company_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="회사이름"
-        android:textColor="@color/TextGray"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/Back_Arrow"
-        app:layout_constraintStart_toEndOf="@id/Back_Arrow"
-        app:layout_constraintTop_toTopOf="@id/Back_Arrow" />
-
-    <TextView
-        android:id="@+id/Event_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:text="회사이름"
-        android:textColor="@color/TextGray"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/Back_Arrow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/Back_Arrow" />
-
-    <TextView
-        android:id="@+id/Category_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="카테고리"
-        android:textColor="@color/TextGray"
-        android:textSize="13sp"
-        app:layout_constraintTop_toBottomOf="@id/Company_Name"
-        app:layout_constraintStart_toStartOf="@id/Company_Name"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/Vp_Promotion"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        app:layout_constraintTop_toBottomOf="@id/Category_Name"
-        android:layout_marginTop="15dp"/>
-
-    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/Vp_Promotion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        app:dotsCornerRadius="20dp"
-        app:dotsSpacing="6dp"/>
+        android:layout_height="match_parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/Back_Arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Company_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="회사이름"
+                android:textColor="@color/TextGray"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/Back_Arrow"
+                app:layout_constraintStart_toEndOf="@id/Back_Arrow"
+                app:layout_constraintTop_toTopOf="@id/Back_Arrow" />
+
+            <TextView
+                android:id="@+id/Event_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:text="오픈이벤트"
+                android:textColor="@color/TextGray"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/Back_Arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/Back_Arrow" />
+
+            <TextView
+                android:id="@+id/Category_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카테고리"
+                android:textColor="@color/TextGray"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@id/Company_Name"
+                app:layout_constraintTop_toBottomOf="@id/Company_Name" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/Vp_Promotion"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Category_Name" />
+
+            <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                app:dotsSize="8dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/Promotion_Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foregroundGravity="center"
+                app:dotsColor="@color/RoundGray"
+                app:dotsCornerRadius="20dp"
+                app:dotsSpacing="6dp"
+                app:layout_constraintEnd_toEndOf="@id/Vp_Promotion"
+                app:layout_constraintStart_toStartOf="@id/Vp_Promotion"
+                app:layout_constraintTop_toBottomOf="@id/Vp_Promotion"
+                app:selectedDotColor="@color/RoundBlack" />
+
+            <TextView
+                android:id="@+id/Promotion_Info_Tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:gravity="center"
+                android:text="광고내용~~~\naaa"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/Promotion_Indicator" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/Rep_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="대표 메뉴"
+                android:textColor="@color/TextGray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Promotion_Info_Tv" />
+
+            <ImageView
+                android:id="@+id/Rep_Img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_launcher_foreground"
+                app:layout_constraintStart_toStartOf="@id/Rep_Title"
+                app:layout_constraintTop_toBottomOf="@id/Rep_Title" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:text="대표 상품 소개~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/Rep_Img"
+                app:layout_constraintTop_toTopOf="@id/Rep_Img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="위치"
+                android:textColor="@color/TextGray"
+                app:layout_constraintStart_toStartOf="@id/Rep_Img"
+                app:layout_constraintTop_toBottomOf="@id/Rep_Img" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

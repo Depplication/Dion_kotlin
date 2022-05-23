@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.view.isVisible
@@ -42,6 +43,7 @@ class EventFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         FoodIcon = view.findViewById(R.id.Food_Icon)
         BeautyIcon = view.findViewById(R.id.Beauty_Icon)
         PlantIcon = view.findViewById(R.id.Plant_Icon)
