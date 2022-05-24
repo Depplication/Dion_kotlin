@@ -70,14 +70,14 @@
                 app:layout_constraintTop_toBottomOf="@id/Category_Name" />
 
             <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-                app:dotsSize="8dp"
-                android:layout_marginTop="10dp"
                 android:id="@+id/Promotion_Indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:foregroundGravity="center"
                 app:dotsColor="@color/RoundGray"
                 app:dotsCornerRadius="20dp"
+                app:dotsSize="8dp"
                 app:dotsSpacing="6dp"
                 app:layout_constraintEnd_toEndOf="@id/Vp_Promotion"
                 app:layout_constraintStart_toStartOf="@id/Vp_Promotion"
@@ -97,11 +97,11 @@
                 app:layout_constraintTop_toBottomOf="@id/Promotion_Indicator" />
 
             <TextView
-                android:layout_marginTop="10dp"
                 android:id="@+id/Rep_Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
                 android:text="대표 메뉴"
                 android:textColor="@color/TextGray"
                 app:layout_constraintStart_toStartOf="parent"
@@ -129,6 +129,7 @@
                 app:layout_constraintTop_toTopOf="@id/Rep_Img" />
 
             <TextView
+                android:id="@+id/Location_Title_Tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -136,6 +137,19 @@
                 android:textColor="@color/TextGray"
                 app:layout_constraintStart_toStartOf="@id/Rep_Img"
                 app:layout_constraintTop_toBottomOf="@id/Rep_Img" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Find_Location_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/RoundButtonBlue"
+                android:text="가게 위치 찾아보기"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Location_Title_Tv" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

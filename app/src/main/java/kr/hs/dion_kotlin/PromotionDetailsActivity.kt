@@ -1,9 +1,11 @@
 package kr.hs.dion_kotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatButton
 import androidx.viewpager2.widget.ViewPager2
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
@@ -13,6 +15,7 @@ class PromotionDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_promotion_details)
 
 
+        val FindLocationBtn : AppCompatButton = findViewById(R.id.Find_Location_Btn)
 
         val BackArrow : ImageView = findViewById(R.id.Back_Arrow)
 
@@ -20,6 +23,11 @@ class PromotionDetailsActivity : AppCompatActivity() {
 
         BackArrow.setOnClickListener {
             finish()
+        }
+
+        FindLocationBtn.setOnClickListener {
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
         }
     }
 
