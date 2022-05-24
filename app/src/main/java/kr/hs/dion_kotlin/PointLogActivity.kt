@@ -22,11 +22,11 @@ class PointLogActivity : AppCompatActivity() {
 
         val BackArrow : ImageView = findViewById(R.id.Back_Arrow)
 
-        BackArrow.setOnClickListener {
-            finish()
+        BackArrow.setOnClickListener { //뒤로가기 버튼 눌렀으면(왼쪽 상단 화살표)
+            finish() //현재 창 닫기... 이정도는 알겠지..?
         }
 
-        setRcv()
+        setRcv() //리사이클러뷰 셋팅 EventFragment에서 설명했으므로 생략
     }
 
     private fun setRcv() {

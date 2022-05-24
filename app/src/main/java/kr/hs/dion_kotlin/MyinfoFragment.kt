@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.widget.addTextChangedListener
 
 class MyinfoFragment : Fragment() {
@@ -34,12 +35,11 @@ class MyinfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        val ArrowChangepoint: ImageView = view.findViewById(R.id.Arrow_Changepoint)
 
-        val ArrowChangepoint : ImageView = view.findViewById(R.id.Arrow_Changepoint)
+        val ArrowMypoint: ImageView = view.findViewById(R.id.Arrow_Mypoint)
 
-        val ArrowMypoint : ImageView = view.findViewById(R.id.Arrow_Mypoint)
-
-        val InfoSettings : ImageView = view.findViewById(R.id.Info_Settings)
+        val InfoSettings: ImageView = view.findViewById(R.id.Info_Settings)
 
         InfoSettings.setOnClickListener {
             val intent = Intent(context, InfoChangeActivity::class.java)
@@ -51,39 +51,39 @@ class MyinfoFragment : Fragment() {
             startActivity(intent)
         }
 
-        ArrowChangepoint.setOnClickListener {
+        ArrowChangepoint.setOnClickListener { //포인트 교환을 눌렀다면...
 
             // Dialog만들기
             val mDialogView = LayoutInflater.from(context).inflate(R.layout.pointchange_log, null)
             val mBuilder = AlertDialog.Builder(mainActivity)
                 .setView(mDialogView)
 
-            val  mAlertDialog = mBuilder.show()
+            val mAlertDialog = mBuilder.show()
 
             val PointEt = mDialogView.findViewById<EditText>(R.id.Point_Et)
             val MoneyEt = mDialogView.findViewById<EditText>(R.id.Money_Et)
 
-            val ChangeBtn = mDialogView.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.Change_Btn)
+            val ChangeBtn = mDialogView.findViewById<AppCompatButton>(R.id.Change_Btn)
 
-            ChangeBtn.setOnClickListener {
-                val temptext = PointEt.text.toString()
-                if(temptext.toInt() >= 5000) {
+            ChangeBtn.setOnClickListener { //교환하기 버튼을 눌렀을 때
+                val temptext = PointEt.text.toString() //교환할 포인트의 값을 임시저장
+                if (temptext.toInt() >= 5000) { //최소 교환단위 5000이상일 때
                     Toast.makeText(context, "성공적으로 포인트 교환이 신청되었습니다.", Toast.LENGTH_SHORT).show()
-                    mAlertDialog.dismiss()
-                }else if(false){
-                  //TODO 내가 가진 포인트보다 큰 숫자를 적었을 시에
+                    mAlertDialog.dismiss() //Dialog 닫기
+                } else if (false) {
+                    //TODO 내가 가진 포인트보다 큰 숫자를 적었을 시에
                 } else {
                     Toast.makeText(context, "최소 교환 금액은 5000P입니다.", Toast.LENGTH_SHORT).show()
                 }
             }
 
-            PointEt.addTextChangedListener {
-                MoneyEt.text = PointEt.text
+            PointEt.addTextChangedListener { //포인트 적는 란의 텍스트가 변경되는 걸 감지하는 이벤트리스너
+                MoneyEt.text = PointEt.text //위의 포인트텍스트가 변경되면 아래 교환되는 돈의 텍스트도 변경되야 함(P : 원 = 1 : 1)
             }
 
-            val CancleButton = mDialogView.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.Cancle_Btn)
-            CancleButton.setOnClickListener {
-                mAlertDialog.dismiss()
+            val CancleButton = mDialogView.findViewById<AppCompatButton>(R.id.Cancle_Btn)
+            CancleButton.setOnClickListener { //취소하기 버튼을 눌렀을 때..
+                mAlertDialog.dismiss() //Dialog 닫기
             }
 
 

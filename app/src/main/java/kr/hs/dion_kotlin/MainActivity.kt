@@ -19,23 +19,23 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        Bn_main.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.Action_Event -> {
-                    replaceFragment(EventFragment())
+        Bn_main.setOnItemSelectedListener { //바텀네비게이션의 아이템을 클릭했을 때
+            when (it.itemId) { // 그 아이템의 id가
+                R.id.Action_Event -> { //이벤트라면
+                    replaceFragment(EventFragment()) //이벤트 프레그먼트로 replace
                 }
-                R.id.Action_Myinfo -> {
-                    replaceFragment(MyinfoFragment())
+                R.id.Action_Myinfo -> { //내정보라면
+                    replaceFragment(MyinfoFragment()) //내정보 프레그먼트로 replace
                 }
             }
             true
         }
-        Bn_main.selectedItemId = R.id.Action_Event
+        Bn_main.selectedItemId = R.id.Action_Event //이벤트 창이 맨처음에 뜸
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment) { //replace 함수
         val fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fl_main, fragment)
-        fragmentTransaction.commit()
+        fragmentTransaction.replace(R.id.fl_main, fragment) //인자로 넘어온 프레그먼트로 replace 시키겠다
+        fragmentTransaction.commit() //replace 시켰으니 commit으로 변경사항 적용
     }
 }

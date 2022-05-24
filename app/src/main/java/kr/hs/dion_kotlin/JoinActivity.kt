@@ -50,7 +50,7 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
         settingListener()
     }
 
-    private fun settingListener(){
+    private fun settingListener(){ //리스너 셋팅
         PwToggle.setOnClickListener(this)
         JoinBtn.setOnClickListener(this)
     }
@@ -72,15 +72,15 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
                     RPwEt.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
 
                 }
-                PwEt.setSelection(PwEt.text.length)
+                PwEt.setSelection(PwEt.text.length) //맨 마지막 글자로 커서 보내기
             }
             JoinBtn -> {
-                CheckJoin()
+                CheckJoin() //회원가입 정규식
             }
         }
     }
 
-    private fun CheckJoin() {
+    private fun CheckJoin() { //이거는 정규식이라서 설명할 게 없음
         if (!Pattern.matches("^(?=.*[A-Za-z])(?=.*[0-9]).{5,11}.\$", IdEt.text.toString())) {
             IdEt.requestFocus()
             Toast.makeText(this, "아이디는 6~12자 문자와 숫자가 필수로 포함되어야합니다.", Toast.LENGTH_SHORT).show()
