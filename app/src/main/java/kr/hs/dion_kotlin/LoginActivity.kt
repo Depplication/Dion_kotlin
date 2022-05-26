@@ -108,11 +108,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             if (grantResults.size > 0) {
                 for (grant in grantResults) {
                     if (grant != PackageManager.PERMISSION_GRANTED) {
-                        Toast.makeText(
-                            this,
-                            "권한 허용을 거부하셨습니다. 앱을 재 설치하시거나 앱 권한을 따로 허용해주세요",
-                            Toast.LENGTH_SHORT
-                        ).show()
                         finish()
                     }
                 }
