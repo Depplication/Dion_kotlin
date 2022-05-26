@@ -1,21 +1,34 @@
 package kr.hs.dion_kotlin
 
+import android.Manifest
+import android.content.DialogInterface
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
-    val Bn_main : BottomNavigationView by lazy{
+
+
+    val Bn_main: BottomNavigationView by lazy {
         findViewById(R.id.Bn_Main)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
 
 
 
@@ -38,4 +51,11 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.fl_main, fragment) //인자로 넘어온 프레그먼트로 replace 시키겠다
         fragmentTransaction.commit() //replace 시켰으니 commit으로 변경사항 적용
     }
+
+
+
+
+
+
+
 }

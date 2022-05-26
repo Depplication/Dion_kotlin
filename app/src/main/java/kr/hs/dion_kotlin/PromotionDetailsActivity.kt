@@ -26,8 +26,8 @@ class PromotionDetailsActivity : AppCompatActivity() {
         }
 
         FindLocationBtn.setOnClickListener { //위치 보기 버튼을 눌렀을 때
-            val intent = Intent(this, MapsActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this, MapsActivity::class.java)
+            //startActivity(intent)
         }
     }
 
