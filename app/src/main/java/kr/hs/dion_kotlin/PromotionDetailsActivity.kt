@@ -1,34 +1,54 @@
 package kr.hs.dion_kotlin
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
+import android.location.Location
+import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
+import android.util.Log
 import android.view.WindowManager
+import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.ScrollView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.app.ActivityCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.gms.maps.model.LatLng
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+import java.io.IOException
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PromotionDetailsActivity : AppCompatActivity() {
+    var locationManager: LocationManager? = null
+    private val REQUEST_CODE_LOCATION: Int = 2
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_promotion_details)
 
-
-        val FindLocationBtn : AppCompatButton = findViewById(R.id.Find_Location_Btn)
+        val MapFrag : FrameLayout = findViewById(R.id.Map_Frag)
 
         val BackArrow : ImageView = findViewById(R.id.Back_Arrow)
+
+        val SL : ScrollView = findViewById(R.id.ScrollLayout)
 
         setVp() //뷰페이저2 셋팅..
 
         BackArrow.setOnClickListener {
             finish()
         }
-
-        FindLocationBtn.setOnClickListener { //위치 보기 버튼을 눌렀을 때
-            //val intent = Intent(this, MapsActivity::class.java)
-            //startActivity(intent)
-        }
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.Map_Frag, MapsFragment())
+            .commit()
     }
 
 
@@ -47,5 +67,20 @@ class PromotionDetailsActivity : AppCompatActivity() {
         viewPagerAdapter.notifyDataSetChanged() //변경사항 적용
 
         Indicator.setViewPager2(VPBanner) //뷰페이저와 인디케이터 연결
+    }
+
+    @SuppressLint("MissingPermission")
+    fun getCurrentLoc(): LatLng {
+        val locationProvider: String = LocationManager.GPS_PROVIDER
+
+        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+
+        val lastKnownLocation: Location? = locationManager.getLastKnownLocation(locationProvider)
+
+        if(lastKnownLocation?.latitude == null){
+            Toast.makeText(this, "위치를 찾을 수 없습니다.\n보이는 현재 위치는 기본 위치(시드니)입니다.", Toast.LENGTH_SHORT).show()
+            return LatLng(-34.0, 151.0)
+        }
+        return LatLng(lastKnownLocation.latitude, lastKnownLocation.longitude)
     }
 }

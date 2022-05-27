@@ -7,6 +7,7 @@
     tools:context=".PromotionDetailsActivity">
 
     <ScrollView
+        android:id="@+id/ScrollLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -138,18 +139,17 @@
                 app:layout_constraintStart_toStartOf="@id/Rep_Img"
                 app:layout_constraintTop_toBottomOf="@id/Rep_Img" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/Find_Location_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+
+            <FrameLayout
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/RoundButtonBlue"
-                android:text="가게 위치 찾아보기"
+                app:layout_constraintTop_toBottomOf="@id/Location_Title_Tv"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/Location_Title_Tv" />
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/Map_Frag" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

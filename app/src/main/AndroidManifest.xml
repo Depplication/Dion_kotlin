@@ -28,7 +28,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyDHL4ybDHPquS_vwH4hkWzDw87iK94wN4M" />
 
         <activity
             android:name=".PromotionDetailsActivity"

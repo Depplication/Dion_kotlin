@@ -84,18 +84,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-//    private fun PermissionGive() {
-//        if (ActivityCompat.checkSelfPermission(
-//                this,
-//                android.Manifest.permission.ACCESS_FINE_LOCATION
-//            ) != PackageManager.PERMISSION_GRANTED
-//        ) {
-//            var permissions = arrayOf(
-//                android.Manifest.permission.ACCESS_FINE_LOCATION
-//            )
-//            ActivityCompat.requestPermissions(this, permissions, MY_PERMISSION_ACCESS_ALL)
-//        }
-//    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,

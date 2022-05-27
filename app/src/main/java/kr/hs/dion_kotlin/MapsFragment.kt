@@ -1,11 +1,12 @@
 package kr.hs.dion_kotlin
 
+import android.content.Context
+import android.location.LocationManager
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.content.ContextCompat.getSystemService
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -15,6 +16,8 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsFragment : Fragment() {
+
+    lateinit var promotionDetailsActivity : PromotionDetailsActivity
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -26,9 +29,10 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val myLoc = promotionDetailsActivity.getCurrentLoc()
+        googleMap.addMarker(MarkerOptions().position(myLoc).title("Marker in Sydney"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(myLoc))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLoc, 15.0F))
     }
 
     override fun onCreateView(
@@ -44,4 +48,10 @@ class MapsFragment : Fragment() {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
     }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        promotionDetailsActivity = context as PromotionDetailsActivity
+    }
+
 }
