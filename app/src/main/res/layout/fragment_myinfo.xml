@@ -216,31 +216,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/location_Layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/round_black"
-                app:layout_constraintTop_toBottomOf="@id/Servicecenter_Layout">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:text="위치권한"
-                    android:textColor="@color/TextGray"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/logout_Layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -248,7 +223,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/round_black"
-                app:layout_constraintTop_toBottomOf="@id/location_Layout">
+                app:layout_constraintTop_toBottomOf="@id/Servicecenter_Layout">
 
                 <TextView
                     android:layout_width="wrap_content"
