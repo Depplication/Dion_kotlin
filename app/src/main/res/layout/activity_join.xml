@@ -7,6 +7,7 @@
     tools:context=".JoinActivity">
 
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,6 +18,78 @@
             android:focusableInTouchMode="true">
 
             <ImageView
+                android:id="@+id/Back_Arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/Arrow_rule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/arrow_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Back_Arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="이용약관"
+                android:textColor="@color/TextGray"
+                app:layout_constraintBottom_toBottomOf="@id/Arrow_rule"
+                app:layout_constraintStart_toEndOf="@id/Arrow_rule"
+                app:layout_constraintTop_toTopOf="@id/Arrow_rule" />
+
+            <TextView
+                android:id="@+id/tv_rule"
+                android:layout_width="0dp"
+                android:layout_height="315dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_gray"
+                android:paddingStart="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:scrollbars="vertical"
+                android:text="@string/Rules"
+                android:textColor="@color/black"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/Arrow_rule" />
+
+            <CheckBox
+                android:id="@+id/check"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/check_box"
+                android:button="@null"
+                android:checked="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_rule" />
+
+            <TextView
+                android:id="@+id/tv_check"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:text="이용약관에 동의하시겠습니까?"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/check"
+                app:layout_constraintTop_toBottomOf="@+id/tv_rule" />
+
+            <ImageView
                 android:id="@+id/Arrow_Id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -24,7 +97,7 @@
                 android:layout_marginTop="25dp"
                 android:src="@drawable/arrow_blue"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/check" />
 
             <TextView
                 android:layout_width="wrap_content"

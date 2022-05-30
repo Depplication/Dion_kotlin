@@ -3,16 +3,30 @@ package kr.hs.dion_kotlin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.InputType
+import android.text.method.ScrollingMovementMethod
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import java.util.regex.Pattern
 
 class JoinActivity : AppCompatActivity(), View.OnClickListener {
+    val sv : ScrollView by lazy {
+        findViewById(R.id.scroll)
+    }
+    var CheckScroll : Boolean = false
+    val tv_rule : TextView by lazy{
+        findViewById(R.id.tv_rule)
+    }
+    val tv_check : TextView by lazy {
+        findViewById(R.id.tv_check)
+    }
+    val RuleCheck : CheckBox by lazy {
+        findViewById(R.id.check)
+    }
     val IdEt : EditText by lazy{
         findViewById(R.id.Id_ET)
     }
@@ -42,7 +56,22 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join)
 
+        val BackArrow : ImageView = findViewById(R.id.Back_Arrow)
+        tv_rule.movementMethod = ScrollingMovementMethod() // 스크롤 가능하게 해주는 부분
+        tv_rule.setOnTouchListener { _, _ ->
+            sv.requestDisallowInterceptTouchEvent(true)//부모 scroll 권한 빼는 부분)
+            return@setOnTouchListener false
+        }
 
+        tv_rule.setOnScrollChangeListener { _, _, _, _, _ ->
+            if (!tv_rule.canScrollVertically(1)) {
+                CheckScroll = true
+            }
+        }
+
+        BackArrow.setOnClickListener {
+            finish()
+        }
 
         PwEt.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
         RPwEt.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
@@ -51,6 +80,8 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun settingListener(){ //리스너 셋팅
+        RuleCheck.setOnClickListener(this)
+        tv_check.setOnClickListener(this)
         PwToggle.setOnClickListener(this)
         JoinBtn.setOnClickListener(this)
     }
@@ -77,11 +108,36 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
             JoinBtn -> {
                 CheckJoin() //회원가입 정규식
             }
+            RuleCheck -> {
+                checkEnabled(RuleCheck)
+            }
+            tv_check -> {
+                checkEnabled(tv_check)
+            }
+        }
+    }
+
+    private fun checkEnabled(v: View){
+        if (CheckScroll){
+            Log.d("TAG", "TOUCH")
+            if(v != RuleCheck){
+                RuleCheck.isChecked = !RuleCheck.isChecked
+            }
+        }
+        else {
+            RuleCheck.isChecked = false
+            Toast.makeText(this, "이용약관 스크롤 후 시도해주세요.", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun CheckJoin() { //이거는 정규식이라서 설명할 게 없음
-        if (!Pattern.matches("^(?=.*[A-Za-z])(?=.*[0-9]).{5,11}.\$", IdEt.text.toString())) {
+        if(!RuleCheck.isChecked){
+            sv.fullScroll(ScrollView.FOCUS_UP)
+            Handler(Looper.getMainLooper()).postDelayed({
+                IdEt.clearFocus()
+            }, 300)
+            Toast.makeText(this, "이용약관에 동의 하지 않으셨습니다.", Toast.LENGTH_SHORT).show()
+        } else if (!Pattern.matches("^(?=.*[A-Za-z])(?=.*[0-9]).{5,11}.\$", IdEt.text.toString())) {
             IdEt.requestFocus()
             Toast.makeText(this, "아이디는 6~12자 문자와 숫자가 필수로 포함되어야합니다.", Toast.LENGTH_SHORT).show()
         } else if (!Pattern.matches("^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&]).{7,14}.\$", PwEt.text.toString())) {
