@@ -41,6 +41,30 @@ class MyinfoFragment : Fragment() {
 
         val InfoSettings: ImageView = view.findViewById(R.id.Info_Settings)
 
+        val Servicecenter: ImageView = view.findViewById(R.id.Arrow_Servicecenter)
+
+        val logout: androidx.constraintlayout.widget.ConstraintLayout = view.findViewById(R.id.logout_Layout)
+
+        val secession: androidx.constraintlayout.widget.ConstraintLayout = view.findViewById(R.id.secession_Layout)
+
+        Servicecenter.setOnClickListener {
+            //val intent = Intent(context, 액티비티)
+            //startActivity(intent)
+            Toast.makeText(context, "서비스센터", Toast.LENGTH_SHORT)
+        }
+
+        logout.setOnClickListener {
+            //val intent = Intent(context, 액티비티)
+            //startActivity(intent)
+            Toast.makeText(context, "로그아웃", Toast.LENGTH_SHORT)
+        }
+
+        secession.setOnClickListener {
+            //val intent = Intent(context, 액티비티)
+            //startActivity(intent)
+            Toast.makeText(context, "탈퇴하기", Toast.LENGTH_SHORT)
+        }
+
         InfoSettings.setOnClickListener {
             val intent = Intent(context, InfoChangeActivity::class.java)
             startActivity(intent)
