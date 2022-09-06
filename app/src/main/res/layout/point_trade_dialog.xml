@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/round_border_null">
+
+    <EditText
+        android:inputType="number"
+        android:fontFamily="@font/jua"
+        android:backgroundTint="@color/MainColor"
+        android:textColor="@color/black"
+        android:paddingEnd="20dp"
+        tools:text="5000"
+        android:id="@+id/Point_Et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="35dp"
+        android:gravity="end"
+        android:singleLine="true"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:fontFamily="@font/jua"
+        android:layout_marginStart="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재포인트"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/Point_Et"
+        app:layout_constraintTop_toTopOf="@id/Point_Et"
+        app:layout_constraintBottom_toBottomOf="@id/Point_Et"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:fontFamily="@font/jua"
+        android:layout_marginEnd="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="P"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/Point_Et"
+        app:layout_constraintTop_toTopOf="@id/Point_Et"
+        app:layout_constraintBottom_toBottomOf="@id/Point_Et"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:fontFamily="@font/jua"
+        android:backgroundTint="@color/MainColor"
+        android:textColor="@color/black"
+        android:enabled="false"
+        tools:text="5000"
+        android:paddingEnd="20dp"
+        android:id="@+id/Money_Et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="35dp"
+        android:gravity="end"
+        android:singleLine="true"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Point_Et" />
+
+    <TextView
+        android:fontFamily="@font/jua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="금액"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/Money_Et"
+        app:layout_constraintTop_toTopOf="@id/Money_Et"
+        app:layout_constraintBottom_toBottomOf="@id/Money_Et"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:fontFamily="@font/jua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="원"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/Money_Et"
+        app:layout_constraintTop_toTopOf="@id/Money_Et"
+        app:layout_constraintBottom_toBottomOf="@id/Money_Et"
+        android:textColor="@color/black"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Trade_Btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/round_full_main"
+        android:text="교환"
+        android:fontFamily="@font/jua"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/Cancle_Btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Money_Et"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Cancle_Btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/round_full_main"
+        android:text="취소"
+        android:fontFamily="@font/jua"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/Trade_Btn"
+        app:layout_constraintTop_toTopOf="@id/Trade_Btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

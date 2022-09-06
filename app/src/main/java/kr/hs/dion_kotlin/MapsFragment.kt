@@ -1,23 +1,18 @@
 package kr.hs.dion_kotlin
 
 import android.content.Context
-import android.location.LocationManager
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
 import android.view.*
-import androidx.core.content.ContextCompat.getSystemService
 
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import kr.hs.dion_kotlin.R
 
 class MapsFragment : Fragment() {
 
-    lateinit var promotionDetailsActivity : PromotionDetailsActivity
+    //lateinit var promotionDetailsActivity : PromotionDetailsActivity
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -29,10 +24,10 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val myLoc = promotionDetailsActivity.getCurrentLoc()
-        googleMap.addMarker(MarkerOptions().position(myLoc).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(myLoc))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLoc, 15.0F))
+        //val myLoc = promotionDetailsActivity.getCurrentLoc()
+        //googleMap.addMarker(MarkerOptions().position(myLoc).title("기본값"))
+        //googleMap.moveCamera(CameraUpdateFactory.newLatLng(myLoc))
+        //googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(myLoc, 15.0F))
     }
 
     override fun onCreateView(
@@ -51,7 +46,7 @@ class MapsFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        promotionDetailsActivity = context as PromotionDetailsActivity
+        //promotionDetailsActivity = context as PromotionDetailsActivity
     }
 
 }

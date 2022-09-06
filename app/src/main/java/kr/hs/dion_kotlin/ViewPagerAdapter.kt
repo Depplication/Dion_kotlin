@@ -2,23 +2,31 @@ package kr.hs.dion_kotlin
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import kr.hs.dion_kotlin.ViewPagerAdapter.PagerViewHolder
+import kr.hs.dion_kotlin.databinding.BannerListItemBinding
 
-class ViewPagerAdapter(Promotions: ArrayList<Int>) : RecyclerView.Adapter<ViewPagerAdapter.PagerViewHolder>() {
-    var item = Promotions
+class ViewPagerAdapter : RecyclerView.Adapter<PagerViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PagerViewHolder((parent))
+    var item = listOf<BannerData>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagerViewHolder {
+        val binding = BannerListItemBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false)
+
+        return PagerViewHolder(binding)
+    }
 
     override fun getItemCount(): Int = item.size
 
     override fun onBindViewHolder(holder: PagerViewHolder, position: Int) {
-        holder.Promotion.setImageResource(item[position])
+        holder.onBind(item[position])
     }
 
-    inner class PagerViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder
-        (LayoutInflater.from(parent.context).inflate(R.layout.promotion_list_item, parent, false)){
-
-        val Promotion = itemView.findViewById<ImageView>(R.id.item_banner)
+    class PagerViewHolder(val binding: BannerListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun onBind(data: BannerData) {
+            binding.itemBanner.setImageURI(data.banner)
+        }
     }
+
 }

@@ -1,35 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <data>
 
-    <FrameLayout
-        android:id="@+id/fl_main"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/Bn_Main"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <variable
+            name="activity"
+            type="kr.hs.dion_kotlin.MainActivity" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/Main_Drawer_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="end">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/Nest_Sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/jua"
+                    android:text="사이사이"
+                    android:textColor="@color/MainColor"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/Category_Layout"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title"
+                    app:layout_constraintStart_toStartOf="@id/tv_title"
+                    android:background="@drawable/round_full_main" >
+
+                    <ImageView
+                        android:id="@+id/Category_Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:adjustViewBounds="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/all"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/Category_Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jua"
+                        android:textSize="12sp"
+                        android:text="전체"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/Category_Icon"
+                        android:textColor="@color/white" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/Menu_Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/menu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_title"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_title"
+                    android:layout_marginEnd="20dp"
+                    app:tint="@color/black" />
+
+                <ImageView
+                    android:id="@+id/Search_Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/search"
+                    app:layout_constraintEnd_toStartOf="@id/Menu_Btn"
+                    app:layout_constraintTop_toTopOf="@id/Menu_Btn"
+                    app:layout_constraintBottom_toBottomOf="@id/Menu_Btn"
+                    android:layout_marginEnd="10dp"
+                    app:tint="@color/black" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/Filter_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/Category_Layout"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@id/Menu_Btn"
+                    android:layout_marginEnd="5dp" >
+
+                    <ImageView
+                        android:id="@+id/Filter_Img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/filter"
+                        app:layout_constraintEnd_toStartOf="@id/Filter_Text"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintTop_toTopOf="@id/Filter_Text"
+                        app:layout_constraintBottom_toBottomOf="@id/Filter_Text"/>
+
+                    <TextView
+                        android:id="@+id/Filter_Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="최신순"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/Event_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintTop_toTopOf="@id/Filter_Layout"
+                    app:layout_constraintEnd_toStartOf="@id/Filter_Layout">
+
+                    <ImageView
+                        android:id="@+id/Event_Img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/event"
+                        app:layout_constraintEnd_toStartOf="@id/Event_Text"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintTop_toTopOf="@id/Event_Text"
+                        app:layout_constraintBottom_toBottomOf="@id/Event_Text"/>
+
+                    <TextView
+                        android:id="@+id/Event_Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이벤트"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Rcv_Promotion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@id/Event_Layout"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/Main_Navigation_View"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/nav_header_main"
+                    layout="@layout/main_drawer_header" />
+
+                <ExpandableListView
+                    android:id="@+id/nav_category_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:groupIndicator="@null" />
+
+            </LinearLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        app:menu="@menu/bottom_nav"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:itemIconTint="@drawable/item_color"
-        app:itemTextColor="@drawable/item_color"
-        android:id="@+id/Bn_Main"
-        android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#FFFFFF"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

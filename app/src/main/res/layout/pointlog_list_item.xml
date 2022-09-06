@@ -1,0 +1,54 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pointlog"
+            type="kr.hs.dion_kotlin.PointLogData" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/Office_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="회사이름"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="16sp"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/black_dot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/Office_Name"
+            app:layout_constraintBottom_toBottomOf="@id/Office_Name"
+            app:layout_constraintEnd_toStartOf="@id/Office_Name" />
+
+        <TextView
+            android:id="@+id/Point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            app:layout_constraintTop_toTopOf="@id/Office_Name"
+            app:layout_constraintBottom_toBottomOf="@id/Office_Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

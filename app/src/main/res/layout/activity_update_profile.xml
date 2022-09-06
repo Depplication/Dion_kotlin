@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".UpdateProfileActivity">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="kr.hs.dion_kotlin.UpdateProfileActivity" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="10dp" >
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_arrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정보변경"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/back_arrow"
+                app:layout_constraintTop_toTopOf="@id/back_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/back_arrow" />
+
+            <TextView
+                android:id="@+id/tv_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="57dp"
+                android:layout_marginTop="46dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="@color/MainColor"
+                android:textSize="10sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_arrow" />
+
+            <EditText
+                android:id="@+id/Name_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/round_border_gray"
+                android:hint="이름를 입력해주세요"
+                android:paddingStart="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp"
+                android:singleLine="true"
+                android:textColorHint="@color/Gray"
+                android:textSize="13sp"
+                app:layout_constraintTop_toTopOf="@id/tv_Name" />
+
+            <TextView
+                android:id="@+id/tv_Call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="57dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="CALL"
+                android:textColor="@color/MainColor"
+                android:textSize="10sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Name_ET" />
+
+            <EditText
+                android:id="@+id/Call_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/round_border_gray"
+                android:hint="전화번호를 입력해주세요"
+                android:paddingStart="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp"
+                android:singleLine="true"
+                android:textColorHint="@color/Gray"
+                android:textSize="13sp"
+                app:layout_constraintTop_toTopOf="@id/tv_Call" />
+
+            <TextView
+                android:id="@+id/tv_Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="57dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="ADD"
+                android:textColor="@color/MainColor"
+                android:textSize="10sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Call_ET" />
+
+            <EditText
+                android:id="@+id/Address_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/round_border_gray"
+                android:hint="주소를 입력해주세요"
+                android:paddingStart="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp"
+                android:singleLine="true"
+                android:textColorHint="@color/Gray"
+                android:textSize="13sp"
+                app:layout_constraintTop_toTopOf="@id/tv_Address" />
+
+            <ImageView
+                android:id="@+id/Address_Btn"
+                android:layout_marginVertical="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/search"
+                app:layout_constraintTop_toTopOf="@id/Address_ET"
+                app:layout_constraintBottom_toBottomOf="@id/Address_ET"
+                app:layout_constraintEnd_toEndOf="@id/Address_ET"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_Bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="57dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="Bank"
+                android:textColor="@color/MainColor"
+                android:textSize="10sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Address_ET" />
+
+            <EditText
+                android:id="@+id/Bank_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/round_border_gray"
+                android:hint="은행을 선택해주세요"
+                android:paddingStart="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp"
+                android:singleLine="true"
+                android:textColorHint="@color/Gray"
+                android:textSize="13sp"
+                app:layout_constraintTop_toTopOf="@id/tv_Bank" />
+
+            <ImageView
+                android:layout_marginVertical="15dp"
+                android:adjustViewBounds="true"
+                android:id="@+id/Bank_Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/forward_arrow"
+                app:layout_constraintTop_toTopOf="@id/Bank_ET"
+                app:layout_constraintBottom_toBottomOf="@id/Bank_ET"
+                app:layout_constraintEnd_toEndOf="@id/Bank_ET"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_Account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="57dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="ACN"
+                android:textColor="@color/MainColor"
+                android:textSize="10sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Bank_ET" />
+
+            <EditText
+                android:id="@+id/Account_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/round_border_gray"
+                android:hint="계좌번호를 입력해주세요"
+                android:paddingStart="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="17dp"
+                android:singleLine="true"
+                android:textColorHint="@color/Gray"
+                android:textSize="13sp"
+                app:layout_constraintTop_toTopOf="@id/tv_Account" />
+
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Update_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/round_full_main"
+                android:text="변경하기"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/Account_ET"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

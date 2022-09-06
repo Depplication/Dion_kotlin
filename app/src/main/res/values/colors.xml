@@ -7,14 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="MainColor">#627FE4</color>
-    <color name="TextGray">#5D5E6A</color>
-    <color name="TextPurple">#221A86</color>
-    <color name="TextRed">#CF5C5C</color>
-    <color name="TextHint">#D1D3E4</color>
-    <color name="RoundButtonBlue">#8AA1F2</color>
-    <color name="RoundGray">#D1D2DB</color>
-    <color name="RoundBlue">#627FE4</color>
-    <color name="RoundBlack">#757580</color>
-    <color name="RoundSearch">#64668C</color>
+    <color name="MainColor">#FF7372</color>
+    <color name="Gray">#71727B</color>
+    <color name="DarkPink">#F2BBB8</color>
 </resources>
