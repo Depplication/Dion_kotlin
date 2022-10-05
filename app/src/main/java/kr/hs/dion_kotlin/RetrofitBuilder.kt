@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitBuilder {
     val okHttpClient = OkHttpClient.Builder().addInterceptor(AuthInterceptor()).build()
     var api: API
-    private var serverIP: String = "10.80.161.64:8082/"
+    private var serverIP: String = "61.97.187.175:3309/"
 
     init {
         val retrofit = Retrofit.Builder()
