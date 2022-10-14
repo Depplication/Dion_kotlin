@@ -94,27 +94,18 @@ class PointLogActivity : AppCompatActivity(), View.OnClickListener {
     private fun createDialog() {
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.point_trade_dialog, null)
         val mBuilder = AlertDialog.Builder(this).setView(mDialogView)
-
-
         val mAlertDialog = mBuilder.show()
         mAlertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-
         val windowManager = this.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val display = windowManager.defaultDisplay
         val size = Point()
-
         display.getSize(size)
-
         val params: ViewGroup.LayoutParams? = mAlertDialog.window!!.attributes
         params!!.width = (size.x * 0.85).toInt()
         mAlertDialog?.window?.attributes = params as WindowManager.LayoutParams
-
         val PointEt = mDialogView.findViewById<EditText>(R.id.Point_Et)
         val MoneyEt = mDialogView.findViewById<EditText>(R.id.Money_Et)
-
         val TradeBtn = mDialogView.findViewById<AppCompatButton>(R.id.Trade_Btn)
-
         TradeBtn.setOnClickListener { //교환하기 버튼을 눌렀을 때
             val temptext = PointEt.text.toString() //교환할 포인트의 값을 임시저장
             if(temptext.isNullOrBlank()){
@@ -127,17 +118,14 @@ class PointLogActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     Toast.makeText(this, "성공적으로 포인트 교환이 신청되었습니다.", Toast.LENGTH_SHORT).show()
                     mAlertDialog.dismiss() //Dialog 닫기
-                    //TODO 포인트 차감
                 }
             } else {
                 Toast.makeText(this, "최소 교환 금액은 5000P입니다.", Toast.LENGTH_SHORT).show()
             }
         }
-
         PointEt.addTextChangedListener { //포인트 적는 란의 텍스트가 변경되는 걸 감지하는 이벤트리스너
             MoneyEt.text = PointEt.text //위의 포인트텍스트가 변경되면 아래 교환되는 돈의 텍스트도 변경되야 함(P : 원 = 1 : 1)
         }
-
         val CancleButton = mDialogView.findViewById<AppCompatButton>(R.id.Cancle_Btn)
         CancleButton.setOnClickListener { //취소하기 버튼을 눌렀을 때..
             mAlertDialog.dismiss() //Dialog 닫기

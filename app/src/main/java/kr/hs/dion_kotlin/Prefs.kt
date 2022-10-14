@@ -35,8 +35,8 @@ class App : Application() {
         lateinit var prefs: Prefs
     }
 
-//    override fun onCreate() {
-//        prefs = Prefs(applicationContext)
-//        super.onCreate()
-//    }
+    override fun onCreate() {
+        prefs = Prefs(applicationContext)
+        super.onCreate()
+    }
 }

@@ -20,6 +20,7 @@
         android:padding="10dp" >
 
         <TextView
+            android:includeFontPadding="false"
             android:id="@+id/Main_Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +71,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
-            android:background="@drawable/round_border_gray"
+            android:background="@drawable/et_style"
             android:hint="아이디를 입력하세요."
             android:paddingStart="15dp"
             android:paddingLeft="10dp"
@@ -103,7 +104,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
-            android:background="@drawable/round_border_gray"
+            android:background="@drawable/et_style"
             android:hint="비밀번호를 입력하세요."
             android:paddingStart="15dp"
             android:paddingLeft="13dp"

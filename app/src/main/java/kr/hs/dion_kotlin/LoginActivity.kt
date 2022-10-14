@@ -153,16 +153,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun SetDialog() {
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
         ) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(
-                    this,
-                    Manifest.permission.ACCESS_FINE_LOCATION
-                )
-            ) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 AlertDialog.Builder(this)
                     .setTitle("알림")
                     .setMessage("위치 권한이 거부되었습니다. 사용을 원하시면 설정에서 해당 권한을 직접 허용하셔야 합니다.")
@@ -182,17 +175,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     .create()
                     .show()
             } else {
-                ActivityCompat.requestPermissions(
-                    this,
-                    arrayOf(
+                ActivityCompat.requestPermissions(this, arrayOf(
                         Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    ),
-                    MY_PERMISSION_ACCESS_ALL
-                )
+                        Manifest.permission.ACCESS_COARSE_LOCATION), MY_PERMISSION_ACCESS_ALL)
             }
         }
     }
-
 
 }
